@@ -1,3 +1,4 @@
+#include <DueTimer.h>
 int led= 13;
 int interrupt2= 3;
 volatile byte val;
@@ -10,6 +11,7 @@ void setup() {
   pinMode(interrupt2,INPUT);
   attachInterrupt(interrupt2,function,CHANGE);
   val=LOW;
+  Timer3.attachInterrupt(handler).start(1000);
 }
 
 void loop() {
@@ -23,4 +25,9 @@ void loop() {
 void function(){
   digitalWrite(led,val);
   val=!val;
+}
+
+void handler(){
+  Timer3.stop();  
+
 }

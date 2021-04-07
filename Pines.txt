@@ -3,4 +3,14 @@ Pines 3 Y 7
 
 ENCENDER MOTOR
 Pines 4,5 como terminales
-Pin 2 como enable
+Pin 2 como enable(HIGH)
+
+
+SENTIDO DEL MOTOR
+	Sentido antihorario:
+		pin5 a LOW
+		Cable en IN2A
+
+	Sentido horario:
+		pin4 a LOW
+		Cable en IN1A
